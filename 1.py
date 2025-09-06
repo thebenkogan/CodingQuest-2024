@@ -12,4 +12,3 @@ for line in lines:
     costs[liner] += n
 
 print(min(costs.values()))
-    

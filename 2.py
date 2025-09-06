@@ -1,16 +1,18 @@
-from aoc import  read_input
+from aoc import read_input
 
-internal_min = [192,168,0,0]
-internal_max = [192,168,254,254]
+internal_min = [192, 168, 0, 0]
+internal_max = [192, 168, 254, 254]
 
-passenger_min = [10,0,0,0]
-passenger_max = [10,0,254,254]
+passenger_min = [10, 0, 0, 0]
+passenger_max = [10, 0, 254, 254]
+
 
 def in_range(min, max, ip):
-    for (l,h), n in zip(zip(min,max), ip):
+    for (l, h), n in zip(zip(min, max), ip):
         if n < l or n > h:
             return False
     return True
+
 
 lines = read_input()
 internal_total = 0
@@ -26,4 +28,3 @@ for line in lines:
         passenger_total += length
 
 print(f"{internal_total}/{passenger_total}")
-
